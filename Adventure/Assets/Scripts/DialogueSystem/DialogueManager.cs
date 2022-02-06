@@ -16,7 +16,6 @@ public class DialogueManager : MonoBehaviour
     private const string IsStartBoxOpen = "isStartBoxOpen";
     private const string IsBoxOpen = "isBoxOpen";
 
-
     private void Start()
     {
         _sentences = new Queue<string>();

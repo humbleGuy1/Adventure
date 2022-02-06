@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerDeathChecker : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Canvas _gameOverScreen;
 
     private void OnHealthChanged(float value)
     {
         if(value <= 0)
         {
-            _canvas.gameObject.SetActive(true);
+            _gameOverScreen.gameObject.SetActive(true);
         }
     }
 

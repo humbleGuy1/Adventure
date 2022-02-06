@@ -10,12 +10,30 @@ public class LadderActivator : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _targetY;
 
-    private void Update()
+    private void OnHealthChanged(int health)
     {
-        if (_enemy.Health <= 0)
+        if (health <= 0)
+            StartCoroutine(ThrowDownLadder());
+    }
+
+    private void OnEnable()
+    {
+        _enemy.HealthChanged += OnHealthChanged;
+    }
+
+    private void OnDisable()
+    {
+        _enemy.HealthChanged -= OnHealthChanged;
+    }
+
+    private IEnumerator ThrowDownLadder()
+    {
+        while (true)
         {
-            _ladder.transform.position = new Vector2(_ladder.transform.position.x, 
-                Mathf.MoveTowards(_ladder.transform.position.y, _targetY, _speed));
+            _ladder.transform.position = new Vector2(_ladder.transform.position.x,
+                        Mathf.MoveTowards(_ladder.transform.position.y, _targetY, _speed));
+
+            yield return null;
         }
     }
 }

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     public void TakeCoin(int value)
     {
         _coins += value;
-        CoinChanged.Invoke(_coins);
+        CoinChanged?.Invoke(_coins);
         _audioSource.Play();
     }
 
@@ -60,12 +60,12 @@ public class Player : MonoBehaviour
         HealthChanged?.Invoke(_health);
     }
 
-    public void BuyKey(int coins)
+    public void BuyKey(int price)
     {
-        if(_coins >= coins)
+        if(_coins >= price)
         {
-            _coins -= coins;
-            CoinChanged.Invoke(_coins);
+            _coins -= price;
+            CoinChanged?.Invoke(_coins);
             _hasKey = true;
         }
     }

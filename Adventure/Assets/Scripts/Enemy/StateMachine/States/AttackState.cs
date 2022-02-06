@@ -11,6 +11,7 @@ public class AttackState : State
 
     private float _lastAttackTime;
     private Animator _animator;
+    private const string Attack = "Attack";
 
     private void Start()
     {
@@ -21,16 +22,16 @@ public class AttackState : State
     {
         if(_lastAttackTime <= 0)
         {
-            Attack(Target);
+            AttackPlayer(Target);
             _lastAttackTime = _delay;
         }
 
         _lastAttackTime -= Time.deltaTime;
     }
 
-    private void Attack(Player target)
+    private void AttackPlayer(Player target)
     {
-        _animator.Play("Attack");
+        _animator.Play(Attack);
         target.TakeDamage(_damage);
     }
 }
