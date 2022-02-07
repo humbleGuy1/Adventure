@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
     private bool _hasKey;
 
     public bool HasKey => _hasKey;
-    public int Coins => _coins;
 
     private void Start()
     {

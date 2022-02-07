@@ -6,6 +6,7 @@ public class Fireball : MonoBehaviour
 {
 
     [SerializeField] private int _speed;
+    [SerializeField] private int _damage;
 
     private void Update()
     {
@@ -16,7 +17,7 @@ public class Fireball : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            player.TakeDamage(5);
+            player.TakeDamage(_damage);
         }
 
         Destroy(gameObject);

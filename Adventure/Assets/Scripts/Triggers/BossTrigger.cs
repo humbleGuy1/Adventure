@@ -6,6 +6,7 @@ public class BossTrigger : MonoBehaviour
 {
     [SerializeField] private AudioSource _levelMusic;
     [SerializeField] private AudioSource _bossMusic;
+    [SerializeField] private Canvas _bossHealthbar;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +14,8 @@ public class BossTrigger : MonoBehaviour
         {
            _levelMusic.Stop();
            _bossMusic.Play();
-            gameObject.SetActive(false);
+           _bossHealthbar.gameObject.SetActive(true);
+           gameObject.SetActive(false);
         }
     }
 }
