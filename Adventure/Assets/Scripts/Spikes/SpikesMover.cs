@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class MovingSpikes : Spikes
+public class SpikesMover : MonoBehaviour
 {
     [SerializeField] private Vector2 _targetPosition;
     [SerializeField] private int _movingTime;

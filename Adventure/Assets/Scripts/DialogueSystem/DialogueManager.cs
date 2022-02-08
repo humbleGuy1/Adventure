@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour
         _textJob = StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    private IEnumerator TypeSentence(string sentence)
     {
         _dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())

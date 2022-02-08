@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour
 {
+    [SerializeField] private int _healValue;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent(out Player player))
         {
-            player.Heal(50);
+            player.Heal(_healValue);
             Destroy(gameObject);
         }
     }

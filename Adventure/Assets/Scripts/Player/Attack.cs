@@ -10,12 +10,12 @@ public class Attack : MonoBehaviour
     private Animator _animator;
     private const string MeleeAttack = "MeleeAttack";
 
-    void Start()
+    private void Start()
     {
         _animator = GetComponent<Animator>();    
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {

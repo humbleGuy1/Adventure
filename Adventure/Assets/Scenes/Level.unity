@@ -3721,7 +3721,6 @@ MonoBehaviour:
   _boss: {fileID: 2084784709}
   _bossHealthbar: {fileID: 2050271945}
   _bossMusic: {fileID: 253827487}
-  _levelMusic: {fileID: 1404772868}
 --- !u!4 &359980961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2944315568954643834, guid: 64c185e9109f3cd44ab560ba1f53d3f8, type: 3}
@@ -4252,7 +4251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &383961863
 Transform:
   m_ObjectHideFlags: 0
@@ -11750,6 +11749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1074579778}
   - component: {fileID: 1074579780}
+  - component: {fileID: 1074579781}
   - component: {fileID: 1074579779}
   m_Layer: 0
   m_Name: MovingSpike
@@ -11786,7 +11786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669cf03003d851b4d862f544abef9fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
   _targetPosition: {x: 69.07, y: 14.1}
   _movingTime: 2
 --- !u!212 &1074579780
@@ -11840,6 +11839,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1074579781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074579777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ac9e6573d96914e868fab9333b58c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
 --- !u!1 &1081716924
 GameObject:
   m_ObjectHideFlags: 0

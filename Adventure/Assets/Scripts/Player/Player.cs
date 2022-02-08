@@ -73,9 +73,10 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
+            var waitForSeconds = new WaitForSeconds(1f);
             _animator.Play(Death);
 
-            yield return new WaitForSeconds(1f);
+            yield return waitForSeconds;
 
             Destroy(gameObject);
         }

@@ -31,12 +31,14 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        _spriteRenderer.flipX = true;
+
         if(_target != null)
         {
-            if (_target.transform.position.x > transform.position.x)
+            bool isPlayerBehind = _target.transform.position.x > transform.position.x;
+
+            if (isPlayerBehind)
                 _spriteRenderer.flipX = false;
-            else
-                _spriteRenderer.flipX = true;
         }
     }
 
@@ -54,10 +56,11 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
+            var waitForSeconds = new WaitForSeconds(1.5f);
             _enemyStateMachine.CurrentState.Exit();
             _animator.Play(Death);
 
-            yield return new WaitForSeconds(1.5f);
+            yield return waitForSeconds;
 
             Destroy(gameObject);
         }

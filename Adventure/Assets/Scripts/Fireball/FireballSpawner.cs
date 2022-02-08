@@ -16,12 +16,14 @@ public class FireballSpawner : MonoBehaviour
     {
         while (true)
         {
-            foreach(var point in _spawnPoints)
+            var waitForSeconds = new WaitForSeconds(2f);
+
+            foreach (var point in _spawnPoints)
             {
                 Instantiate(_fireballPrefab, point, Quaternion.identity);
             }
 
-            yield return new WaitForSeconds(2f);
+            yield return waitForSeconds;
         }
     }
 }
